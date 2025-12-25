@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoFlow</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>::-webkit-scrollbar { display: none;}</style>
+</head>
+<body class="font-sans antialiased bg-white">
+
+<header id="header" class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-gauge-high text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-bold text-gray-900">AutoFlow</span>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-gray-900 font-medium transition">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 font-medium transition">How It Works</a>
+                <a href="#security" class="text-gray-600 hover:text-gray-900 font-medium transition">Security</a>
+                <a href="#screens" class="text-gray-600 hover:text-gray-900 font-medium transition">Screens</a>
+                <a href="#faqs" class="text-gray-600 hover:text-gray-900 font-medium transition">FAQs</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium transition">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-semibold transition shadow-sm">
+                    Request a Demo
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="hero" class="bg-gradient-to-br from-slate-50 via-blue-50 to-slate-50 pt-20 pb-24 h-[700px] flex items-center">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-block">
+                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
+                        Internal Operations Platform
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                    Internal Garage Management, <span class="text-blue-600">Simplified.</span>
+                </h1>
+                
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    Centralize bookings, technicians, services, and invoices in one powerful internal portal. Built exclusively for automotive garage staff operations—no customer access, just pure workflow efficiency.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition shadow-lg hover:shadow-xl">
+                        Request a Demo
+                    </button>
+                    <button onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})" class="bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition border-2 border-gray-200">
+                        View Features
+                    </button>
+                </div>
+                
+                <div class="flex flex-wrap items-center gap-6 pt-4">
+                    <div class="flex items-center space-x-2 text-gray-700">
+                        <i class="fa-solid fa-shield-halved text-blue-600"></i>
+                        <span class="text-sm font-medium">Operations-ready</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-700">
+                        <i class="fa-solid fa-lock text-blue-600"></i>
+                        <span class="text-sm font-medium">Role-based access</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-gray-700">
+                        <i class="fa-solid fa-bolt text-blue-600"></i>
+                        <span class="text-sm font-medium">Fast setup</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="bg-white rounded-2xl shadow-2xl p-6 border border-gray-200">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-6 text-white">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold">Dashboard Overview</h3>
+                            <i class="fa-solid fa-chart-line text-2xl"></i>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                                <div class="text-sm opacity-80 mb-1">Today's Bookings</div>
+                                <div class="text-3xl font-bold">24</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                                <div class="text-sm opacity-80 mb-1">Active Jobs</div>
+                                <div class="text-3xl font-bold">12</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                                <div class="text-sm opacity-80 mb-1">Technicians</div>
+                                <div class="text-3xl font-bold">8</div>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur rounded-lg p-4">
+                                <div class="text-sm opacity-80 mb-1">Revenue</div>
+                                <div class="text-3xl font-bold">$4.2K</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="trust-strip" class="bg-white py-12 border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-rocket text-blue-600 text-2xl"></i>
+                </div>
+                <div class="font-semibold text-gray-900">Operations-Ready</div>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-user-shield text-blue-600 text-2xl"></i>
+                </div>
+                <div class="font-semibold text-gray-900">Admin-Controlled</div>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-clipboard-check text-blue-600 text-2xl"></i>
+                </div>
+                <div class="font-semibold text-gray-900">Audit-Friendly</div>
+            </div>
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-gauge-high text-blue-600 text-2xl"></i>
+                </div>
+                <div class="font-semibold text-gray-900">Fast & Reliable</div>
+            </div>
+        </div>
+        
+        <div class="mt-12 bg-gradient-to-r from-blue-50 to-slate-50 rounded-xl p-8 border border-blue-100">
+            <div class="flex items-start space-x-4">
+                <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-quote-left text-white"></i>
+                </div>
+                <div>
+                    <p class="text-lg text-gray-700 italic mb-3">
+                        "AutoFlow transformed our garage operations. We went from chaotic spreadsheets to a streamlined system in days. Our technicians love the clarity, and our admin team finally has control."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Manager" class="w-10 h-10 rounded-full">
+                        <div>
+                            <div class="font-semibold text-gray-900">Michael Torres</div>
+                            <div class="text-sm text-gray-600">Operations Manager, Premium Auto Care</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="problem-solution" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">The Problem We Solve</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Running a garage without proper internal systems creates chaos. AutoFlow brings order to your operations.
+            </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div id="without-autoflow" class="bg-white rounded-2xl p-8 border-2 border-red-200 shadow-lg">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-xmark text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900">Without AutoFlow</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900 mb-1">Spreadsheet Hell</div>
+                            <div class="text-gray-600">Bookings scattered across Excel files, WhatsApp, and paper notes</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900 mb-1">Missed Appointments</div>
+                            <div class="text-gray-600">No centralized view leads to double bookings and forgotten jobs</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900 mb-1">Zero Visibility</div>
+                            <div class="text-gray-600">Management can't see real-time operations or technician workload</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900 mb-1">Inconsistent Pricing</div>
+                            <div class="text-gray-600">Different staff quote different prices for the same service</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900 mb-1">Manual Invoicing</div>
+                            <div class="text-gray-600">Hours wasted creating invoices by hand with calculation errors</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                        <div>
+                            <div class="font-semibold text-gray-900 mb-1">No Audit Trail</div>
+                            <div class="text-gray-600">Impossible to track who did what and when for compliance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="with-autoflow" class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 shadow-2xl text-white">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-check text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">With AutoFlow</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-check text-green-300 mt-1"></i>
+                        <div>
+                            <div class="font-semibold mb-1">Single Dashboard</div>
+                            <div class="text-blue-100">All bookings, technicians, and jobs in one centralized system</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-check text-green-300 mt-1"></i>
+                        <div>
+                            <div class="font-semibold mb-1">Structured Processes</div>
+                            <div class="text-blue-100">Clear workflows prevent double bookings and ensure nothing falls through</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-check text-green-300 mt-1"></i>
+                        <div>
+                            <div class="font-semibold mb-1">Real-Time Visibility</div>
+                            <div class="text-blue-100">Management sees live operations, technician status, and performance metrics</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-check text-green-300 mt-1"></i>
+                        <div>
+                            <div class="font-semibold mb-1">Consistent Service Catalog</div>
+                            <div class="text-blue-100">Admin-managed pricing ensures every staff member quotes correctly</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-check text-green-300 mt-1"></i>
+                        <div>
+                            <div class="font-semibold mb-1">Automated Invoicing</div>
+                            <div class="text-blue-100">Generate accurate invoices in seconds with tax calculations included</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-check text-green-300 mt-1"></i>
+                        <div>
+                            <div class="font-semibold mb-1">Complete Audit Trail</div>
+                            <div class="text-blue-100">Every action logged with user, timestamp, and change history</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Core Features
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Everything Your Garage Needs
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Built specifically for internal garage operations with features that streamline every aspect of your workflow
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="feature-dashboard" class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-blue-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-chart-line text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Centralized Dashboard</h3>
+                <p class="text-gray-600 mb-4">
+                    Real-time KPIs, charts, and quick actions. See bookings, revenue, technician status, and operations metrics at a glance.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-blue-600"></i>
+                        <span>Live operations overview</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-blue-600"></i>
+                        <span>Performance analytics</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-blue-600"></i>
+                        <span>Quick action shortcuts</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="feature-bookings" class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border border-purple-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-calendar-check text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Booking Management</h3>
+                <p class="text-gray-600 mb-4">
+                    Complete booking lifecycle with list views, filters, status workflows, and detailed job tracking from intake to completion.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-purple-600"></i>
+                        <span>Advanced filtering & search</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-purple-600"></i>
+                        <span>Status workflow tracking</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-purple-600"></i>
+                        <span>Job history & notes</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="feature-ai-scheduling" class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-green-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-green-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-wand-magic-sparkles text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">AI-Assisted Scheduling</h3>
+                <p class="text-gray-600 mb-4">
+                    Intelligent duration estimates, suggested time slots, and automatic technician matching based on specialization and availability.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-green-600"></i>
+                        <span>Smart duration prediction</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-green-600"></i>
+                        <span>Optimal time suggestions</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-green-600"></i>
+                        <span>Technician auto-match</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="feature-services" class="bg-gradient-to-br from-orange-50 to-white rounded-2xl p-8 border border-orange-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-wrench text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Services & Pricing Control</h3>
+                <p class="text-gray-600 mb-4">
+                    Admin-managed service catalog with consistent pricing, descriptions, and duration estimates for every service type.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-orange-600"></i>
+                        <span>Centralized service library</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-orange-600"></i>
+                        <span>Pricing consistency</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-orange-600"></i>
+                        <span>Service categories</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="feature-technicians" class="bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-8 border border-indigo-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-users-gear text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Technician Management</h3>
+                <p class="text-gray-600 mb-4">
+                    Track specializations, availability schedules, current assignments, and performance. Match the right technician to every job.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-indigo-600"></i>
+                        <span>Skill & specialization tags</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-indigo-600"></i>
+                        <span>Availability calendar</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-indigo-600"></i>
+                        <span>Workload distribution</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="feature-invoices" class="bg-gradient-to-br from-red-50 to-white rounded-2xl p-8 border border-red-100 hover:shadow-xl transition">
+                <div class="w-14 h-14 bg-red-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-file-invoice-dollar text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-3">Invoices & Tax</h3>
+                <p class="text-gray-600 mb-4">
+                    Generate professional invoices instantly with automatic tax calculations, payment tracking, and export capabilities.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-red-600"></i>
+                        <span>One-click invoice generation</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-red-600"></i>
+                        <span>Automatic tax calculation</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-check text-red-600"></i>
+                        <span>Payment status tracking</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how-it-works" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Implementation
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                How It Works
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Get your garage operational in days, not weeks. Simple setup, powerful results.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+            <div id="step-1" class="relative">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-200 h-full">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-white text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Admin Configuration</h3>
+                    <p class="text-gray-600 text-center mb-4">
+                        Set up your services catalog, pricing structure, technician profiles, and tax settings.
+                    </p>
+                    <div class="flex justify-center">
+                        <i class="fa-solid fa-gear text-blue-600 text-3xl"></i>
+                    </div>
+                </div>
+                <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <i class="fa-solid fa-arrow-right text-blue-600 text-2xl"></i>
+                </div>
+            </div>
+            
+            <div id="step-2" class="relative">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-200 h-full">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-white text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Staff Access</h3>
+                    <p class="text-gray-600 text-center mb-4">
+                        Admin creates accounts for staff members with appropriate role permissions. No public signup.
+                    </p>
+                    <div class="flex justify-center">
+                        <i class="fa-solid fa-user-lock text-purple-600 text-3xl"></i>
+                    </div>
+                </div>
+                <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <i class="fa-solid fa-arrow-right text-purple-600 text-2xl"></i>
+                </div>
+            </div>
+            
+            <div id="step-3" class="relative">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-green-200 h-full">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-white text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Create Bookings</h3>
+                    <p class="text-gray-600 text-center mb-4">
+                        Staff uses AI-assisted wizard to create bookings with smart scheduling and technician matching.
+                    </p>
+                    <div class="flex justify-center">
+                        <i class="fa-solid fa-calendar-plus text-green-600 text-3xl"></i>
+                    </div>
+                </div>
+                <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <i class="fa-solid fa-arrow-right text-green-600 text-2xl"></i>
+                </div>
+            </div>
+            
+            <div id="step-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-orange-200 h-full">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-600 to-orange-800 rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-white text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 text-center">Track & Invoice</h3>
+                    <p class="text-gray-600 text-center mb-4">
+                        Monitor operations in real-time, generate invoices instantly, and maintain complete audit trails.
+                    </p>
+                    <div class="flex justify-center">
+                        <i class="fa-solid fa-chart-simple text-orange-600 text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition shadow-lg">
+                Start Your Setup Today
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="screens" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Product Tour
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Explore Every Screen
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                A comprehensive look at AutoFlow's interface designed for efficient garage operations
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="screen-login" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-lock text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">Secure Login</h4>
+                        <p class="text-sm text-center text-blue-100">Staff-only access portal</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">Login Screen</h3>
+                        <span class="text-sm text-gray-500">Authentication</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen-dashboard" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-purple-600 to-purple-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-chart-line text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">Operations Hub</h4>
+                        <p class="text-sm text-center text-purple-100">Real-time metrics & KPIs</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">Dashboard</h3>
+                        <span class="text-sm text-gray-500">Overview</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen-bookings" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-green-600 to-green-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-list-check text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">Booking List</h4>
+                        <p class="text-sm text-center text-green-100">Filter, search & manage</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">Bookings List</h3>
+                        <span class="text-sm text-gray-500">Management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen-new-booking" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-wand-magic-sparkles text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">AI Wizard</h4>
+                        <p class="text-sm text-center text-orange-100">Smart booking creation</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">New Booking</h3>
+                        <span class="text-sm text-gray-500">AI-Assisted</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen-services" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-red-600 to-red-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-wrench text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">Service Catalog</h4>
+                        <p class="text-sm text-center text-red-100">Pricing & descriptions</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">Services</h3>
+                        <span class="text-sm text-gray-500">Admin</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen-technicians" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-indigo-600 to-indigo-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-users-gear text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">Technician Hub</h4>
+                        <p class="text-sm text-center text-indigo-100">Skills & availability</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">Technicians</h3>
+                        <span class="text-sm text-gray-500">Management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen-invoices" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-teal-600 to-teal-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-file-invoice-dollar text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">Invoice Manager</h4>
+                        <p class="text-sm text-center text-teal-100">Generate & track</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">Invoices</h3>
+                        <span class="text-sm text-gray-500">Billing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen-users" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-pink-600 to-pink-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-user-shield text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">User Management</h4>
+                        <p class="text-sm text-center text-pink-100">Roles & permissions</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">User Management</h3>
+                        <span class="text-sm text-gray-500">Admin Only</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen-settings" class="group">
+                <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 hover:shadow-xl transition">
+                    <div class="bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg p-8 mb-4 h-64 flex flex-col items-center justify-center text-white">
+                        <i class="fa-solid fa-sliders text-5xl mb-4 opacity-80"></i>
+                        <h4 class="text-xl font-bold mb-2">System Settings</h4>
+                        <p class="text-sm text-center text-gray-100">Configuration & preferences</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-bold text-gray-900">Settings</h3>
+                        <span class="text-sm text-gray-500">Admin Only</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="security" class="py-20 bg-gradient-to-br from-slate-900 to-blue-900 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-block bg-white/10 backdrop-blur text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Security & Access Control
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                Built for Internal Security
+            </h2>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                AutoFlow is designed as a staff-only internal system with enterprise-grade security and access controls
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div id="security-no-public" class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-user-slash text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">No Public Signup</h3>
+                <p class="text-blue-100">
+                    Only admin can create staff accounts. Zero public access or registration.
+                </p>
+            </div>
+            
+            <div id="security-roles" class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-user-gear text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Role-Based Access</h3>
+                <p class="text-blue-100">
+                    Admin vs Staff permissions control who can access sensitive features.
+                </p>
+            </div>
+            
+            <div id="security-audit" class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-clipboard-list text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Audit-Friendly Logs</h3>
+                <p class="text-blue-100">
+                    Track every action with user attribution and timestamps for compliance.
+                </p>
+            </div>
+            
+            <div id="security-data" class="bg-white/10 backdrop-blur rounded-2xl p-6 border border-white/20">
+                <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-database text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Data Privacy</h3>
+                <p class="text-blue-100">
+                    Internal deployment-ready. Your data stays within your infrastructure.
+                </p>
+            </div>
+        </div>
+        
+        <div class="bg-white/5 backdrop-blur rounded-2xl p-8 border border-white/20">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Admin-Controlled Access Management</h3>
+                    <p class="text-blue-100 mb-6">
+                        AutoFlow puts complete control in the hands of your administrators. Manage who has access, what they can see, and what actions they can perform.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-400 mt-1"></i>
+                            <span class="text-blue-100">Create and manage staff accounts from admin panel</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-400 mt-1"></i>
+                            <span class="text-blue-100">Assign specific roles and permissions per user</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-400 mt-1"></i>
+                            <span class="text-blue-100">Deactivate accounts instantly when staff leaves</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-check-circle text-green-400 mt-1"></i>
+                            <span class="text-blue-100">View complete activity logs for security audits</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white/10 rounded-xl p-6 border border-white/20">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-white/5 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                                    <i class="fa-solid fa-user-tie text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Admin</div>
+                                    <div class="text-sm text-blue-200">Full Access</div>
+                                </div>
+                            </div>
+                            <span class="text-green-400 text-sm font-semibold">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-white/5 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
+                                    <i class="fa-solid fa-user text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Staff</div>
+                                    <div class="text-sm text-blue-200">Limited Access</div>
+                                </div>
+                            </div>
+                            <span class="text-green-400 text-sm font-semibold">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-white/5 rounded-lg opacity-50">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">
+                                    <i class="fa-solid fa-user-slash text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-semibold">Former Staff</div>
+                                    <div class="text-sm text-blue-200">No Access</div>
+                                </div>
+                            </div>
+                            <span class="text-red-400 text-sm font-semibold">Deactivated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="use-cases" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                Use Cases
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Built for Every Garage Type
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Whether you're a small independent shop or a large multi-bay operation, AutoFlow scales to your needs
+            </p>
+        </div>
+        
+        <div class="grid lg:grid-cols-3 gap-8">
+            <div id="usecase-small" class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border-2 border-blue-200 hover:shadow-xl transition">
+                <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-store text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Small Garage Operations</h3>
+                <p class="text-gray-600 mb-6">
+                    Perfect for independent garages with 2-5 technicians. Replace paper logs and spreadsheets with a professional system that grows with you.
+                </p>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                        <span>Simple setup in under an hour</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                        <span>Essential features without complexity</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                        <span>Affordable for small teams</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-blue-600 mt-1"></i>
+                        <span>Instant professionalization</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="usecase-multi" class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 border-2 border-purple-200 hover:shadow-xl transition">
+                <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-building text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Multi-Bay Workshop Scheduling</h3>
+                <p class="text-gray-600 mb-6">
+                    Ideal for medium to large garages with 6-20 technicians across multiple service bays. Optimize resource allocation and maximize throughput.
+                </p>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-purple-600 mt-1"></i>
+                        <span>Advanced scheduling algorithms</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-purple-600 mt-1"></i>
+                        <span>Bay utilization optimization</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-purple-600 mt-1"></i>
+                        <span>Technician workload balancing</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-purple-600 mt-1"></i>
+                        <span>Real-time capacity monitoring</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="usecase-fleet" class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border-2 border-green-200 hover:shadow-xl transition">
+                <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fa-solid fa-truck text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Fleet Maintenance Teams</h3>
+                <p class="text-gray-600 mb-6">
+                    Designed for corporate fleet maintenance operations managing dozens of vehicles. Track service history, schedule preventive maintenance, and control costs.
+                </p>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                        <span>Vehicle-specific service records</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                        <span>Preventive maintenance scheduling</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                        <span>Cost tracking per vehicle</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-green-600 mt-1"></i>
+                        <span>Fleet-wide analytics</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="faqs" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                FAQ
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                Frequently Asked Questions
+            </h2>
+            <p class="text-xl text-gray-600">
+                Everything you need to know about AutoFlow
+            </p>
+        </div>
+        
+        <div class="space-y-4">
+            <div id="faq-1" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-blue-600 mr-3"></i>
+                    Is AutoFlow customer-facing?
+                </h3>
+                <p class="text-gray-600 pl-9">
+                    No. AutoFlow is exclusively an internal operations tool for garage staff. Customers do not have access to the system, cannot create accounts, and cannot book appointments themselves. All bookings are created by your staff members.
+                </p>
+            </div>
+            
+            <div id="faq-2" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-blue-600 mr-3"></i>
+                    Do customers book appointments through AutoFlow?
+                </h3>
+                <p class="text-gray-600 pl-9">
+                    No. AutoFlow is a staff-only system. Customers contact your garage through phone, email, or walk-in, and your staff creates bookings in the system. This gives you complete control over scheduling and service delivery.
+                </p>
+            </div>
+            
+            <div id="faq-3" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-blue-600 mr-3"></i>
+                    Can we customize services and pricing?
+                </h3>
+                <p class="text-gray-600 pl-9">
+                    Yes. Administrators have full control over the service catalog. You can add, edit, or remove services, set pricing, define service durations, and organize services into categories. This ensures consistent pricing across all staff members.
+                </p>
+            </div>
+            
+            <div id="faq-4" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-blue-600 mr-3"></i>
+                    How does AI-assisted booking work?
+                </h3>
+                <p class="text-gray-600 pl-9">
+                    When creating a booking, AutoFlow analyzes the selected services and suggests optimal time slots based on service duration and technician availability. It also recommends the best-matched technician based on their specializations and current workload. Staff can accept or override these suggestions.
+                </p>
+            </div>
+            
+            <div id="faq-5" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-blue-600 mr-3"></i>
+                    Can we export invoices and reports?
+                </h3>
+                <p class="text-gray-600 pl-9">
+                    Yes. AutoFlow supports PDF export for invoices and various report formats. You can export individual invoices for customer records or bulk export reports for accounting purposes. Additional export formats and advanced reporting are on the roadmap.
+                </p>
+            </div>
+            
+            <div id="faq-6" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-blue-600 mr-3"></i>
+                    What about roles and permissions?
+                </h3>
+                <p class="text-gray-600 pl-9">
+                    AutoFlow has two primary roles: Admin and Staff. Admins have full access to all features including user management, service catalog, settings, and system configuration. Staff members have access to day-to-day operations like creating bookings, viewing schedules, and generating invoices. Admins control who has access to what.
+                </p>
+            </div>
+            
+            <div id="faq-7" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-blue-600 mr-3"></i>
+                    How fast can we onboard?
+                </h3>
+                <p class="text-gray-600 pl-9">
+                    Most garages are fully operational within 1-3 days. The process is simple: 1) Admin sets up services and pricing (1-2 hours), 2) Admin creates staff accounts (15 minutes), 3) Brief staff training (30 minutes per person), 4) Start creating bookings. We provide guided setup and optional onboarding assistance.
+                </p>
+            </div>
+            
+            <div id="faq-8" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                    <i class="fa-solid fa-circle-question text-blue-600 mr-3"></i>
+                    Can this be self-hosted or deployed on-premises?
+                </h3>
+                <p class="text-gray-600 pl-9">
+                    Self-hosted and on-premises deployment options are on our roadmap. Currently, AutoFlow is offered as a cloud-hosted solution with enterprise-grade security. For organizations requiring on-premises deployment, please contact our sales team to discuss custom deployment options and timeline.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="final-cta" class="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+            Bring Order to Your Garage Operations
+        </h2>
+        <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            Stop managing your garage with spreadsheets and paper. AutoFlow gives you the professional internal system you need to scale efficiently.
+        </p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">
+                Request a Demo
+            </button>
+            <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})" class="bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-800 transition border-2 border-white/20">
+                Contact Sales
+            </button>
+        </div>
+        
+        <p class="text-blue-100 text-sm">
+            <i class="fa-solid fa-shield-halved mr-2"></i>
+            Internal-only • Secure • Built for real workflows
+        </p>
+        
+        <div class="mt-12 grid md:grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="text-4xl font-bold mb-2">< 2 Days</div>
+                <div class="text-blue-100">Average Setup Time</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-2">100%</div>
+                <div class="text-blue-100">Staff-Only Access</div>
+            </div>
+            <div>
+                <div class="text-4xl font-bold mb-2">24/7</div>
+                <div class="text-blue-100">Support Available</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+                <div class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    Get Started
+                </div>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">
+                    Request a Demo
+                </h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    See AutoFlow in action. Our team will walk you through the platform and answer all your questions.
+                </p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-video text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-1">Live Product Demo</h3>
+                            <p class="text-gray-600">See every feature in action with a personalized walkthrough</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-comments text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-1">Q&A Session</h3>
+                            <p class="text-gray-600">Get answers to your specific questions and use cases</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-rocket text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-1">Implementation Plan</h3>
+                            <p class="text-gray-600">Learn how quickly you can get up and running</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="contact-firstname">First Name *</label>
+                            <input type="text" id="contact-firstname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="contact-lastname">Last Name *</label>
+                            <input type="text" id="contact-lastname" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2" for="contact-business">Business Name *</label>
+                        <input type="text" id="contact-business" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" for="contact-phone">Phone *</label>
+                            <input type="tel" id="contact-phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2" for="contact-technicians">Number of Technicians</label>
+                        <select id="contact-technicians" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>1-5</option>
+                            <option>6-10</option>
+                            <option>11-20</option>
+                            <option>20+</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2" for="contact-message">Message</label>
+                        <textarea id="contact-message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your garage and what you're looking for..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-lg font-semibold text-lg transition shadow-lg">
+                        Request Demo
+                    </button>
+                    
+                    <p class="text-sm text-gray-500 text-center">
+                        We'll respond within 24 hours on business days
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="bg-slate-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+                        <i class="fa-solid fa-gauge-high text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold">AutoFlow</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-4">
+                    Internal garage management portal built for automotive professionals.
+                </p>
+                <p class="text-gray-500 text-xs">
+                    AutoFlow is an internal operations tool for garages. Not customer-facing.
+                </p>
+            </div>
+            
+            <div>
+                <h3 class="font-bold text-lg mb-4">Product</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#features" class="hover:text-white transition">Features</a></li>
+                    <li><a href="#screens" class="hover:text-white transition">Screens</a></li>
+                    <li><a href="#security" class="hover:text-white transition">Security</a></li>
+                    <li><a href="#use-cases" class="hover:text-white transition">Use Cases</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="font-bold text-lg mb-4">Company</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition">Support</a></li>
+                    <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="font-bold text-lg mb-4">Legal</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Data Security</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <p class="text-gray-400 text-sm">
+                    © 2024 AutoFlow. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fa-brands fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+window.addEventListener('load', function() {
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your interest! Our team will contact you within 24 hours.');
+    });
+});
+</script>
+
+</body>
+</html>
